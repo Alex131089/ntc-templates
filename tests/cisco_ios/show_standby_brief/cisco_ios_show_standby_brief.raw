@@ -7,5 +7,10 @@ Vl51        1    120 P Init    unknown         unknown         10.1.51.1
 Vl51        6    120 P Init    unknown         unknown         FE80::DEF
 Vl500       1    120 P Active  local           10.1.5.3      10.1.5.1
 Vl500       6    120 P Active  local           FE80::B         FE80::DEF
+Po1.555     555  210 P Active  local           FE80::EA66:55FF:FE44:3322
+                                                               FE80::5:55FF:FE44:22
+Po1.666     666  200 P Standby FE80::EA66:55FF:FE44:3344
+                                               local           FE80::5:55FF:FE44:33
+Po1.777     777  200 P Active  local           unknown         FE80::5:55FF:FE44:44
 Vl4010 
      1    120 P Active  local           10.1.254.3    10.1.254.1

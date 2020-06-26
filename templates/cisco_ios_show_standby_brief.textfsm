@@ -15,7 +15,13 @@ Start
 
 Standby
   ^${IFACE}\s+${GROUP}\s+${PRIORITY}\s+${PREEMPT}\s+${STATE}\s+${ACTIVE}\s+${STANDBY}\s+${VIRTUALIP} -> Record
+  # Multiple group per interface (?)
   ^${IFACE}\s*$$
   ^\s*${GROUP}\s+${PRIORITY}\s+${PREEMPT}\s+${STATE}\s+${ACTIVE}\s+${STANDBY}\s+${VIRTUALIP} -> Record
-  ^\s*$$
+  # IPv6, Standby and Active overflow on next line
+  ^${IFACE}\s+${GROUP}\s+${PRIORITY}\s+${PREEMPT}\s+${STATE}\s+${ACTIVE}\s+${STANDBY}\s*$$
+  ^\s+${VIRTUALIP}\s*$$ -> Record
+  ^${IFACE}\s+${GROUP}\s+${PRIORITY}\s+${PREEMPT}\s+${STATE}\s+${ACTIVE}\s*$$
+  ^\s+${STANDBY}\s+${VIRTUALIP}\s*$$ -> Record
+  ^\s*$$ # Skip empty lines
   ^. -> Error
